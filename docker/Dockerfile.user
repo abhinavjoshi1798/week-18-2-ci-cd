@@ -13,6 +13,7 @@ RUN npm install
 RUN cd packages/db && npx prisma generate && cd ../..
 
 # Can you filter the build down to just one app?
+ENV NEXT_PUBLIC_BASE_PATH=/userapp
 RUN npm run build
 
 CMD ["npm", "run", "start-user-app"]
